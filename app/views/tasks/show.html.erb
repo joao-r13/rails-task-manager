@@ -1,0 +1,25 @@
+<div class="app-shell">
+  <div class="panel-card card">
+    <div class="panel-body">
+      <% if @task.completed %>
+        <span class="badge rounded-pill text-bg-success px-3 py-2 mb-3"><i class="fa-solid fa-check me-1"></i>Completed</span>
+      <% else %>
+        <span class="badge rounded-pill text-bg-secondary px-3 py-2 mb-3"><i class="fa-regular fa-clock me-1"></i>In progress</span>
+      <% end %>
+
+      <h1 class="page-title h2 mb-3"><%= @task.title %></h1>
+      <p class="text-muted mb-0" style="line-height: 1.7;">
+        <%= @task.details.presence || "No details provided." %>
+      </p>
+    </div>
+
+    <div class="panel-footer d-flex justify-content-between">
+      <%= link_to tasks_path, class: "btn btn-soft" do %>
+        <i class="fa-solid fa-arrow-left me-2"></i>Back
+      <% end %>
+      <%= link_to edit_task_path(@task), class: "btn btn-accent" do %>
+        <i class="fa-solid fa-pen me-2"></i>Edit
+      <% end %>
+    </div>
+  </div>
+</div>

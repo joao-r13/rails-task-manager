@@ -1,0 +1,24 @@
+<div class="app-shell">
+  <div class="panel-card card">
+    <%= form_with model: @task, url: tasks_path do |f| %>
+      <div class="panel-body">
+        <h1 class="page-title h3 mb-4">New task</h1>
+
+        <div class="mb-4">
+          <%= f.label :title, class: "form-label" %>
+          <%= f.text_field :title, class: "form-control form-control-lg", placeholder: "What needs to be done?" %>
+        </div>
+
+        <div>
+          <%= f.label :details, class: "form-label" %>
+          <%= f.text_area :details, rows: 5, class: "form-control", placeholder: "Add some details..." %>
+        </div>
+      </div>
+
+      <div class="panel-footer d-flex justify-content-between">
+        <%= link_to "Cancel", tasks_path, class: "btn btn-soft" %>
+        <%= f.submit "Create task", class: "btn btn-accent" %>
+      </div>
+    <% end %>
+  </div>
+</div>
